@@ -117,6 +117,38 @@
         left: 2px;
     }
 </style>
-<div class="cylinder fillfloor3">
-    <div class="lift60"></div>
+<div class="cylinder">
+    <div class="water lift20"></div>
 </div>
+<script>
+    // a cylinder represents an empty tank of water
+    // the 'cylinder' class is the tank
+    // the 'fillfloor-n' class is the water as it initially fills the very bottom of the tank from the center outwards
+    // the 'lift-n' class is the water as it rises up the tank from the bottom to the top
+    // the 'fill-n' in the class name represents the percentage of the tank that is filled with water
+
+    // the tank is 250px wide and 400px tall
+    // the tank is a circle with a radius of 40px
+    // the tank starts out empty
+    // the tank is filled with water from the bottom up
+
+    // when the up arrow key is pressed, the water level rises by 20%
+
+    // key listener for the up arrow key
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowUp") {
+            // get the cylinder element
+            const cylinder = document.querySelector(".cylinder");
+            // get the water level element
+            const waterLevel = cylinder.querySelector(".water");
+            // get the current height of the water level
+            const currentHeight = waterLevel.clientHeight;
+            // calculate the new height of the water level
+            const newHeight = currentHeight + 60;
+            // set the new height of the water level
+            waterLevel.style.height = newHeight + "px";
+        }
+    });
+
+    // when the down arrow key is pressed, the water level falls by 20%
+</script>
