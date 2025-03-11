@@ -1,0 +1,122 @@
+<style>
+    .cylinder {
+        /* this variable will define how much ci*/
+        --r: 40px;
+        /* whatever values/units you want */
+        width: 250px;
+        height: 400px;
+        background:
+                radial-gradient(50% var(--r) at 50% var(--r), #0003 99.99%, #0000 0),
+                radial-gradient(12.5% calc(var(--r) * 0.25) at 50% calc(100% - var(--r)), #fff3 99.99%, #0000 0),
+                #369;
+        border-radius: 100% / calc(var(--r) * 2);
+        transition: background-color 5s, background-position 5s, border-radius 5s;
+        position: relative;
+        overflow: visible;
+    }
+    .fillfloor {
+        --r: 40px;
+        background:
+                radial-gradient(50% var(--r) at 50% var(--r), #0003 99.99%, #0000 0),
+                radial-gradient(25% calc(var(--r) * 0.25) at 50% calc(101% - var(--r)), #fff3 99.99%, #0000 0),
+                #369;
+        border-radius: 100% / calc(var(--r) * 2);
+    }
+    .fillfloor2 {
+        --r: 40px;
+        background:
+                radial-gradient(50% var(--r) at 50% var(--r), #0003 99.99%, #0000 0),
+                radial-gradient(33% calc(var(--r) * 0.5) at 50% calc(101% - var(--r)), #fff3 99.99%, #0000 0),
+                #369;
+        border-radius: 100% / calc(var(--r) * 2);
+    }
+    .fillfloor3 {
+        --r: 40px;
+        background:
+                radial-gradient(50% var(--r) at 50% var(--r), #0003 99.99%, #0000 0),
+                radial-gradient(50% calc(var(--r) ) at 50% calc(101% - var(--r)) , #fff3 99.99%, #0000 0),
+                #369;
+        border-radius: 100% / calc(var(--r) * 2);
+    }
+    .lift20 {
+        /* this variable will define how much ci*/
+        --r: 40px;
+        /* whatever values/units you want */
+        width: 250px;
+        height: 400px;
+        background:
+                radial-gradient(50% var(--r) at 50% var(--r), #0003 99.99%, #0000 0),
+                radial-gradient(50% calc(var(--r) ) at 50% calc(100% - var(--r)), #fff3 99.99%, #0000 0),
+                #04c3ff;
+        border-radius: 100% / calc(var(--r) * 2);
+        transition: background-color 5s, background-position 5s, border-radius 5s;
+        position: absolute;
+        bottom: 2px;
+        height: 160px;
+        width: 246px;
+        left: 2px;
+    }
+    .lift40 {
+        /* this variable will define how much ci*/
+        --r: 40px;
+        background:
+                radial-gradient(50% var(--r) at 50% var(--r), #0003 99.99%, #0000 0),
+                radial-gradient(50% calc(var(--r) ) at 50% calc(100% - var(--r)), #fff3 99.99%, #0000 0),
+                #04c3ff;
+        border-radius: 100% / calc(var(--r) * 2);
+        transition: background-color 5s, background-position 5s, border-radius 5s;
+        position: absolute;
+        bottom: 2px;
+        height: 240px;
+        width: 246px;
+        left: 2px;
+    }
+    .lift60 {
+        /* this variable will define how much ci*/
+        --r: 40px;
+        background:
+                radial-gradient(50% var(--r) at 50% var(--r), #0003 99.99%, #0000 0),
+                radial-gradient(50% calc(var(--r) ) at 50% calc(100% - var(--r)), #fff3 99.99%, #0000 0),
+                #04c3ff;
+        border-radius: 100% / calc(var(--r) * 2);
+        transition: background-color 5s, background-position 5s, border-radius 5s;
+        position: absolute;
+        bottom: 2px;
+        height: 300px;
+        width: 246px;
+        left: 2px;
+    }
+    .lift80 {
+        /* this variable will define how much ci*/
+        --r: 40px;
+        background:
+                radial-gradient(50% var(--r) at 50% var(--r), #0003 99.99%, #0000 0),
+                radial-gradient(50% calc(var(--r) ) at 50% calc(100% - var(--r)), #fff3 99.99%, #0000 0),
+                #04c3ff;
+        border-radius: 100% / calc(var(--r) * 2);
+        transition: background-color 5s, background-position 5s, border-radius 5s;
+        position: absolute;
+        bottom: 2px;
+        height: 380px;
+        width: 246px;
+        left: 2px;
+    }
+    .lift100 {
+        /* this variable will define how much ci*/
+        --r: 40px;
+        background:
+                radial-gradient(50% var(--r) at 50% var(--r), #0003 99.99%, #0000 0),
+                radial-gradient(50% calc(var(--r) ) at 50% calc(100% - var(--r)), #fff3 99.99%, #0000 0),
+                #04c3ff;
+        border-radius: 100% / calc(var(--r) * 2);
+        transition: background-color 5s, background-position 5s, border-radius 5s;
+        position: absolute;
+        bottom: 2px;
+        height: 398px;
+        width: 246px;
+        left: 2px;
+    }
+</style>
+<div class="cylinder fillfloor3">
+    <div class="lift60"></div>
+</div>
