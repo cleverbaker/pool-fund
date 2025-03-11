@@ -118,7 +118,7 @@
     }
 </style>
 <div class="cylinder">
-    <div class="water lift20"></div>
+    <div class="water"></div>
 </div>
 <script>
     // a cylinder represents an empty tank of water
@@ -133,6 +133,7 @@
     // the tank is filled with water from the bottom up
 
     // when the up arrow key is pressed, the water level rises by 20%
+    // when right arrow is pressed, the water spreads from the bottom-center, outwards, by 20%
 
     // key listener for the up arrow key
     document.addEventListener("keydown", function (event) {
@@ -149,6 +150,49 @@
             waterLevel.style.height = newHeight + "px";
         }
     });
+
+    // key listener for the right arrow key
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowRight") {
+            // get the cylinder element
+            const cylinder = document.querySelector(".cylinder");
+            // get the water level element
+            const waterLevel = cylinder.querySelector(".water");
+
+            // if cylinder has andy class that starts with 'fillfloor'
+            if (cylinder.classList.contains("fillfloor")) {
+                // remove 'fillfloor' class
+                cylinder.classList.remove("fillfloor");
+                // add 'fillfloor2' class
+                cylinder.classList.add("fillfloor2");
+            } else if (cylinder.classList.contains("fillfloor2")) {
+                // remove 'fillfloor2' class
+                cylinder.classList.remove("fillfloor2");
+                // add 'fillfloor3' class
+                cylinder.classList.add("fillfloor3");
+            } else if (cylinder.classList.contains("fillfloor3")) {
+                // remove 'fillfloor3' class
+                cylinder.classList.remove("fillfloor3");
+                // add 'lift20' class
+                waterLevel.classList.add("lift20");
+
+            } else if (waterLevel.classList.contains("lift20")) {
+                // get the current height of the water level
+                const currentHeight = waterLevel.clientHeight;
+
+                // if current height is less than height of cylinder
+                if (currentHeight < cylinder.clientHeight) {
+                    // set the new height of the water level
+                    waterLevel.style.height = currentHeight + 20 + "px";
+                }
+            }
+            else {
+                // add 'fillfloor' class
+                cylinder.classList.add("fillfloor");
+            }
+        }
+    });
+
 
     // when the down arrow key is pressed, the water level falls by 20%
 </script>
