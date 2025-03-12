@@ -1,0 +1,41 @@
+<style>
+
+  .tank-back, .tank-front, .tank-middle {
+    height: 200px;
+    background-color: #959F9EFF;
+    position: absolute;
+    top: 50px;
+    opacity: 80%;
+    outline: 1px dot-dot-dash rgba(0, 0, 0, 0.2);
+  }
+  .tank-front {
+    left: 225px;
+    border-left: 1px solid gray;
+    width: 1px;
+  }
+  .tank-middle {
+    width: 250px;
+    left: 226px;
+    outline: none;
+    opacity: 100%;
+  }
+  .tank-back {
+    border-right: 1px solid #cecece;
+    left: 475px;
+    width: 1px;
+  }
+
+  .horizontal-box:hover .tank {
+    /* fill half */
+    background-image:
+            linear-gradient(0deg, #f5efef 50%, transparent 50%),
+            linear-gradient(180deg, #04c3ff 50%, transparent 50%);
+  }
+</style>
+<div>
+  <div class="horizontal-box">
+    <div class="tank-back side tank"></div>
+    <div class="tank-front tank"></div>
+    <div class="tank-middle side tank"></div>
+  </div>
+</div>
