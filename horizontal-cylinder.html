@@ -1,0 +1,43 @@
+<style>
+    .ellipse {
+        border-radius: 50% / 100% 100%;
+        background-color: lightgray;
+    }
+    .tank-back, .tank-front, .tank-middle {
+        width: 100px;
+        height: 200px;
+        background-color: #959F9EFF;
+        position: absolute;
+        top: 50px;
+        opacity: 80%;
+        outline: 1px dot-dot-dash rgba(0, 0, 0, 0.2);
+    }
+    .tank-front {
+        left: 225px;
+        border-left: 1px solid gray;
+    }
+    .tank-middle {
+        width: 300px;
+        left: 250px;
+        outline: none;
+        opacity: 100%;
+    }
+    .tank-back {
+        border-right: 1px solid #cecece;
+        left: 475px;
+    }
+
+    .horizontal-cylinder:hover .tank {
+        /* fill half */
+        background-image:
+                linear-gradient(0deg, #f5efef 50%, transparent 50%),
+                linear-gradient(180deg, #04c3ff 50%, transparent 50%);
+    }
+</style>
+<div>
+    <div class="horizontal-cylinder">
+        <div class="circle ellipse tank-back tank"></div>
+        <div class="circle ellipse tank-front tank"></div>
+        <div class="tank-middle tank"></div>
+    </div>
+</div>
