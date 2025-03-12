@@ -25,11 +25,21 @@
     width: 1px;
   }
 
+  .horizontal-box .tank {
+    /* fill half */
+    background-color: #F5EFEFFF;
+    background-image:
+            linear-gradient(0deg, #f5efef 50%, transparent 50%),
+            linear-gradient(180deg, #04c3ff 50%, transparent 50%);
+
+  }
+
   .horizontal-box:hover .tank {
     /* fill half */
     background-image:
             linear-gradient(0deg, #f5efef 50%, transparent 50%),
             linear-gradient(180deg, #04c3ff 50%, transparent 50%);
+    background-position: center -10px, center -10px;
   }
   .greeting-label {
     text-align: center;
@@ -53,4 +63,4 @@
     <div class="tank-middle side tank"></div>
   </div>
 </div>
-<p class="greeting-label">Hover over tank to see 50% fill demo</p>
+<p class="greeting-label">Hover over tank to see 10% fill demo</p>
