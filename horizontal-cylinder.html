@@ -56,3 +56,28 @@
     </div>
 </div>
 <p class="greeting-label">Hover over tank to see 50% fill demo</p>
+<script>
+    function liquidCrossSectionArea(r, h) {
+        // Calculate the central angle
+        const theta = 2 * Math.acos((r - h) / r);
+
+        // Calculate the area of the circular segment
+        const area = r * r * (theta - Math.sin(theta));
+
+        return area;
+    }
+
+    function liquidVolume(r, h, l) {
+        // Calculate the volume of the liquid
+        const volume = liquidCrossSectionArea(r, h) * l;
+
+        return volume;
+    }
+
+    const area = liquidCrossSectionArea(10, 10);
+    console.log("Area of liquid's cross-section, with radius ", 10, " at height ", 10, ": ", area, " square units");
+
+    const vol = liquidVolume(10, 10, 22);
+    console.log("Volume of liquid of tank with length ", 22, " is ", vol ," cubed units");
+
+</script>
