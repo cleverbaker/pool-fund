@@ -12,6 +12,9 @@
         margin: auto;
         border: 3px solid rgba(0, 0, 0, 0);
     }
+    .tank {
+        transform: rotateY(20deg);
+    }
     .tank, .fuel {
         width: 260px;
         height: 260px;
@@ -33,14 +36,26 @@
     .tank-container:hover {
         cursor: wait;
     }
-    .tank-container:hover .fuel {
+    .container:hover .fuel {
         outline: 3px solid rgba(0, 0, 0, 0.2);
         height: 100%;
         transition: height 7700ms ease-in-out;
     }
+
+    /* Create 3D perspective-effect with t2. Transform it to -670px on the z axis */
+    .tank.t2 {
+        transform: perspective(1000px) translateZ(-670px) rotateY(20deg) translateX(380px);
+        z-index: 5;
+        /* 3D transform, rotate 30º along the Z plane around the Y-axis */
+
+    }
 </style>
 <div class="container">
     <div class="tank-container">
+        <div class="tank t2">
+            <div class="fuel">
+            </div>
+        </div>
         <div class="tank">
             <div class="fuel">
             </div>
