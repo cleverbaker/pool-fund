@@ -1,0 +1,42 @@
+<div id="tank-01"></div>
+<script>
+    // create svg element
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+
+    // create path element
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+    let fw = 0; // fill width
+    let fl = 67; // fill length
+    let r = 13;
+    let factor = 10;
+    let start_x = 20;
+    let start_y = 150;
+    let end_x = 280;
+    let end_y = 150;
+    let working_r = r * factor;
+
+    // set width and height
+    svg.setAttribute("width", "300");
+    svg.setAttribute("height", "300");
+    // set viewbox
+    svg.setAttribute("viewBox", "0 0 300 300");
+
+    // set path data
+    path.setAttribute("d", "M " + start_x + " " + start_y + " A " + working_r + " " + working_r + " 0 0 0 " + end_x +
+        " " + end_y);
+    // set fill color
+    path.setAttribute("fill", "lightblue");
+    // set stroke color
+    path.setAttribute("stroke", "black");
+    // set stroke width
+    path.setAttribute("stroke-width", "10");
+    // set stroke line join
+    path.setAttribute("stroke-linejoin", "none");
+
+    // append path to svg
+    svg.appendChild(path);
+
+    // append svg to the tank-01 div
+    document.getElementById("tank-01").appendChild(svg);
+</script>
