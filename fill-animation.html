@@ -1,0 +1,49 @@
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .tank-container {
+        position: relative;
+        width: 260px;
+        height: 260px;
+        margin: auto;
+        border: 3px solid rgba(0, 0, 0, 0);
+    }
+    .tank, .fuel {
+        width: 260px;
+        height: 260px;
+        border: 0;
+        border-radius: 50%;
+        position: absolute;
+        outline: 3px solid rgba(0, 0, 0, 0.2);
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        background-color: #cecece;
+    }
+    .fuel {
+        background-color: #04c3ff;
+        border-radius: 0;
+        height: 0%;
+        outline: 3px solid rgba(0, 0, 0, 0);
+    }
+    .tank-container:hover {
+        cursor: wait;
+    }
+    .tank-container:hover .fuel {
+        outline: 3px solid rgba(0, 0, 0, 0.2);
+        height: 100%;
+        transition: height 7700ms ease-in-out;
+    }
+</style>
+<div class="container">
+    <div class="tank-container">
+        <div class="tank">
+            <div class="fuel">
+            </div>
+        </div>
+    </div>
+</div>
