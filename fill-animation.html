@@ -4,6 +4,8 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
+        perspective: 1000px;
+        perspective-origin: 75% 25%;
     }
     .tank-container {
         position: relative;
@@ -11,9 +13,14 @@
         height: 260px;
         margin: auto;
         border: 3px solid rgba(0, 0, 0, 0);
+        overflow: visible;
+        transform-style: preserve-3d;
+        transform-origin: 130px 260px;
     }
+
     .tank {
-        transform: rotateY(20deg);
+
+        transform-style: preserve-3d;
     }
     .tank, .fuel {
         width: 260px;
@@ -22,10 +29,11 @@
         border-radius: 50%;
         position: absolute;
         outline: 3px solid rgba(0, 0, 0, 0.2);
-        left: 0;
+        left: 0px;
         bottom: 0;
         overflow: hidden;
         background-color: #cecece;
+        /*transform: rotateY(-20deg);*/
     }
     .fuel {
         background-color: #04c3ff;
@@ -38,20 +46,47 @@
     }
     .container:hover .fuel {
         outline: 3px solid rgba(0, 0, 0, 0.2);
-        height: 100%;
+        height: 50%;
         transition: height 7700ms ease-in-out;
     }
 
     /* Create 3D perspective-effect with t2. Transform it to -670px on the z axis */
     .tank.t2 {
-        transform: perspective(1000px) translateZ(-670px) rotateY(20deg) translateX(380px);
+        transform: translateZ(-670px);
         z-index: 5;
-        /* 3D transform, rotate 30º along the Z plane around the Y-axis */
 
+    }
+    .fuel-surface-container {
+        transform-style: preserve-3d;
+        position: relative;
+        transform-origin: left center;
+    }
+    .fuel-surface { display: inline-block; width:670px; height: 260px;
+
+        border-left: rgb(255, 0, 0) 12px solid;
+        border-right: rgb(0, 255, 0) 12px solid;
+        border-top: rgb(152, 100, 255) 12px solid;
+        border-bottom: rgb(0, 187, 255) 12px solid;
+        box-sizing: border-box;
+        transform-origin: center center;
+        transform: rotateX(-90deg) rotateZ(90deg) translateX(335px) translateY(205px) translateZ(0px);
+        z-index: 6;
+        opacity: 0.8;
+        position: absolute;
+        left: 0;
+        top: 0;
+        /*background rainbow gradient*/
+        background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+    }
+    .container:hover .tank-container {
+        transform: rotateY(-25deg);
+        transition: transform 7700ms ease-out;
     }
 </style>
 <div class="container">
     <div class="tank-container">
+        <div class="fuel-surface-container">
+        <div class="fuel-surface"></div></div>
         <div class="tank t2">
             <div class="fuel">
             </div>
