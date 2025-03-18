@@ -47,7 +47,7 @@
     .container:hover .fuel {
         outline: 3px solid rgba(0, 0, 0, 0.2);
         height: 50%;
-        transition: height 7700ms ease-in-out;
+        transition: height 7700ms ease-out;
     }
 
     /* Create 3D perspective-effect with t2. Transform it to -670px on the z axis */
@@ -60,27 +60,37 @@
         transform-style: preserve-3d;
         position: relative;
         transform-origin: left center;
+        outline: purple 1px solid;
+        height: 260px;
+        box-sizing: content-box;
     }
     .fuel-surface { display: inline-block; width:670px; height: 260px;
 
-        border-left: rgb(255, 0, 0) 12px solid;
-        border-right: rgb(0, 255, 0) 12px solid;
-        border-top: rgb(152, 100, 255) 12px solid;
-        border-bottom: rgb(0, 187, 255) 12px solid;
+        border-left: rgb(255, 0, 0) 0px solid;
+        border-right: rgb(0, 255, 0) 0px solid;
+        border-top: rgb(152, 100, 255) 0px solid;
+        border-bottom: rgb(0, 187, 255) 0px solid;
         box-sizing: border-box;
         transform-origin: center center;
-        transform: rotateX(-90deg) rotateZ(90deg) translateX(335px) translateY(205px) translateZ(0px);
+        transform: rotateX(-90deg) rotateZ(90deg) translateX(335px) translateY(204px) translateZ(0px);
         z-index: 6;
         opacity: 0.8;
+        bottom: 0%;
         position: absolute;
-        left: 0;
-        top: 0;
+
+        margin: auto;
         /*background rainbow gradient*/
         background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+        max-height: 1px;
     }
     .container:hover .tank-container {
-        transform: rotateY(-25deg);
+        transform: rotateY(-125deg);
         transition: transform 7700ms ease-out;
+    }
+    .container:hover .fuel-surface {
+        /*height: auto;*/
+        max-height: 260px;
+        transition: max-height 7700ms ease-out;
     }
 </style>
 <div class="container">
